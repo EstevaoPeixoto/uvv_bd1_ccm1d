@@ -1,4 +1,4 @@
-# PSET-1
+# Banco De Dados
 ### Aluno: Estêvão Schultz Peixoto
 ### Professor: Abrantes Araújo Silva Filho
 ### Monitor: -
