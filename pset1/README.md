@@ -1,5 +1,5 @@
 # PSET-1
-## Professor: Abrantes
+## Professor: Abrantes Araújo Silva Filho
 ## Monitor: -
 ## Aluno: Estêvão Schultz Peixoto
 --------------------------------------------------------------------
