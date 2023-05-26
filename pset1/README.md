@@ -3,4 +3,4 @@
 ## Monitor: -
 ## Aluno: Estêvão Schultz Peixoto
 --------------------------------------------------------------------
-Este diretório contem os arquivos referentes ao trabalho pset-1 proposto pelo professor.
+Este diretório contem os arquivos referentes ao trabalho PSET-1 proposto pelo professor.
