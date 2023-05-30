@@ -6,7 +6,7 @@ DROP DATABASE IF EXISTS uvv;
 
 DROP 	USER IF EXISTS estevao;
 
-CREATE 	USER estevao 	WITH 	CREATEDB
+CREATE  USER estevao 	WITH 	CREATEDB
 				CREATEROLE
 				ENCRYPTED PASSWORD 'est'
 ;
@@ -24,7 +24,9 @@ CREATE DATABASE uvv	WITH 	OWNER = estevao
 COMMENT ON DATABASE 	uvv					IS 'Banco de Dados da uvv';
 -- Conecta ao Banco de Dados "uvv"
 
-\c uvv;
+\setenv PGPASSWORD est
+
+\c uvv estevao
 
 -- Cria e comenta o esquema do Banco de Dados
 
@@ -33,8 +35,10 @@ CREATE SCHEMA lojas AUTHORIZATION estevao;
 COMMENT ON SCHEMA 	lojas					IS 'Esquema das lojas UVV';
 
 
--- Muda o esquema padrão do usuário "estevao"
+-- Muda o esquema da sessão atual e o padrão do usuário "estevao"
 
+
+SET SEARCH_PATH TO lojas, "$user", public;
 
 ALTER ROLE estevao SET SEARCH_PATH TO lojas, "$user", public;
 
@@ -357,4 +361,3 @@ ALTER TABLE		pedidos_itens 	ADD CONSTRAINT preco_unitario_pedido_itens_check	CHE
 ALTER TABLE		estoques	ADD CONSTRAINT quantidade_estoques_check		CHECK (quantidade > 0);
 
 ALTER TABLE		produtos	ADD CONSTRAINT preco_unitario_produtos_check		CHECK (preco_unitario > 0);
-
